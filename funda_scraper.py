@@ -91,7 +91,7 @@ def output_csv(total_info_dict):
         for key in del_list:
             del total_info_dict[index][key]
     with open(os.path.join(sys.path[0], 'housedata.csv'), 'w', encoding='utf-8') as file:
-        writer = csv.DictWriter(file, delimiter=';', fieldnames=fieldnames)
+        writer = csv.DictWriter(file, delimiter=';', fieldnames=fieldnames, newline="")
         writer.writeheader()
         writer.writerows(total_info_dict)
         
